@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Crédito</title>
     <link rel="stylesheet" href="simulador.css">
+    <script src="funciones.js" defer></script>
+    <script src="simulador.js" defer></script>
 </head>
 <body>
 
@@ -18,8 +20,8 @@
         <label for="txtEgresos">Egresos:</label>
         <input type="text" id="txtEgresos">
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <p>Disponible: <span id="spnDisponible"><span id="lblDisponibleValor"></span></span></p>
+        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"><span id="lblCapacidadValor"></span></span></p>
 
         <h2>Solicitud de crédito</h2>
         <label for="txtMonto">Monto:</label>
@@ -31,13 +33,13 @@
         <label for="txtTasaInteres">Tasa de interés:</label>
         <input type="text" id="txtTasaInteres">
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
+        <p>Interés a pagar: <span id="spnInteresPagar"><span id="lblInteresValor"></span></span></p>
+        <p>Total préstamo: <span id="spnTotalPrestamo"><span id="lblTotalValor"></span></span></p>
+        <p>Cuota mensual: <span id="spnCuotaMensual"><span id="lblCuotaValor"></span></span></p>
         <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
 
         <div class="buttons">
-            <button id="btnCalcularCredito">Calcular Crédito</button>
+            <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
             <button id="btnReiniciar">Reiniciar</button>
         </div>
     </div>
