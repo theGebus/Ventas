@@ -13,4 +13,7 @@ function calcular() {
     let tasa = parseInt(document.getElementById("txtTasaInteres").value, 10);
     let interes = calcularInteresSimple(monto, tasa, plazoAnios);
     document.getElementById("lblInteresValor").textContent = "USD " + interes.toFixed(2);
+
+    let total = calcularTotalPagar(monto, interes);
+    document.getElementById("lblTotalValor").textContent = "USD " + total.toFixed(2);
 }
