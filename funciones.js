@@ -24,3 +24,15 @@ function calcularCuotaMensual(total, plazoAnios) {
     let meses = plazoAnios * 12;
     return total / meses;
 }
+
+function aprobarCredito(capacidadPago, cuotaMensual) {
+    if (capacidadPago > cuotaMensual) {
+        return true;
+    }
+    return false;
+}
+
+// El paso 14 usa otro nombre: delegamos en la funcion del paso 13.
+function analizarCredito(capacidadPago, cuotaMensual) {
+    return aprobarCredito(capacidadPago, cuotaMensual);
+}
