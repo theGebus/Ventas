@@ -3,46 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <meta name="theme-color" content="#102d39">
+    <title>Simulador de crédito | Gebus Capital</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="simulador.css">
     <script src="funciones.js" defer></script>
     <script src="simulador.js" defer></script>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Simulador de Crédito</h1>
-
-        <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
-
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
-
-        <p>Disponible: <span id="spnDisponible"><span id="lblDisponibleValor"></span></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"><span id="lblCapacidadValor"></span></span></p>
-
-        <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
-
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
-
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
-
-        <p>Interés a pagar: <span id="spnInteresPagar"><span id="lblInteresValor"></span></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"><span id="lblTotalValor"></span></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"><span id="lblCuotaValor"></span></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
-
-        <div class="buttons">
-            <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
+    <header class="cabecera">
+        <a class="marca" href="simulador.html" aria-label="Gebus Capital, inicio"><img src="logo.svg" alt="" width="44" height="44"><span>GEBUS <strong>CAPITAL</strong></span></a>
+        <span class="etiqueta">SIMULADOR FINANCIERO</span>
+    </header>
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">TU SIGUIENTE PASO, CON CLARIDAD</p>
+            <h1>Haz espacio para<br>tus próximos planes.</h1>
+            <p>Conoce tu capacidad de pago y calcula la cuota de tu crédito en un solo lugar.</p>
+        </section>
+        <div class="simulador">
+            <form id="formCredito" onsubmit="calcular(); return false;">
+                <section class="seccion">
+                    <h2><span class="numero">01</span> Tus finanzas mensuales</h2>
+                    <div class="campos">
+                        <div><label for="txtIngresos">Ingresos mensuales <small>USD</small></label><input type="number" id="txtIngresos" min="0" step="0.01" inputmode="decimal" placeholder="Ej. 1000.40" required></div>
+                        <div><label for="txtEgresos">Egresos mensuales <small>USD</small></label><input type="number" id="txtEgresos" min="0" step="0.01" inputmode="decimal" placeholder="Ej. 600" required></div>
+                    </div>
+                </section>
+                <section class="seccion">
+                    <h2><span class="numero">02</span> El crédito que tienes en mente</h2>
+                    <label for="txtMonto">Monto solicitado <small>USD · entero</small></label><input type="number" id="txtMonto" min="1" step="1" inputmode="numeric" placeholder="Ej. 2000" required>
+                    <div class="campos">
+                        <div><label for="txtPlazo">Plazo <small>años enteros</small></label><input type="number" id="txtPlazo" min="1" step="1" inputmode="numeric" placeholder="Ej. 1" required></div>
+                        <div><label for="txtTasaInteres">Tasa anual simple <small>% entero</small></label><input type="number" id="txtTasaInteres" min="0" step="1" inputmode="numeric" placeholder="Ej. 10" required></div>
+                    </div>
+                </section>
+                <div class="buttons"><button id="btnCalcularCredito" type="submit">Calcular Crédito <span aria-hidden="true">↗</span></button><button id="btnReiniciar" type="button" onclick="reiniciar()">Reiniciar</button></div>
+                <p class="nota">El total incluye USD 100 por impuestos y contribución a SOLCA, según el taller.</p>
+            </form>
+            <aside class="resultados" aria-live="polite" aria-atomic="true">
+                <p class="eyebrow">TU SIMULACIÓN</p>
+                <h2>Un panorama claro.</h2>
+                <div class="cuota"><p>Cuota mensual estimada</p><span id="spnCuotaMensual"><span id="lblCuotaValor">USD 0.00</span></span></div>
+                <dl>
+                    <div><dt>Disponible mensual</dt><dd id="spnDisponible"><span id="lblDisponibleValor">USD 0.00</span></dd></div>
+                    <div><dt>Capacidad de pago <small>50% del disponible</small></dt><dd id="spnCapacidadPago"><span id="lblCapacidadValor">USD 0.00</span></dd></div>
+                    <div><dt>Interés generado</dt><dd id="spnInteresPagar"><span id="lblInteresValor">USD 0.00</span></dd></div>
+                    <div class="total"><dt>Total a pagar</dt><dd id="spnTotalPrestamo"><span id="lblTotalValor">USD 0.00</span></dd></div>
+                </dl>
+                <p id="spnEstadoCredito" class="pendiente">ANALIZANDO...</p>
+                <p class="ayuda">Completa tus datos y presiona Calcular Crédito. La capacidad de pago debe superar la cuota mensual.</p>
+            </aside>
         </div>
-    </div>
-
+        <footer><span>GEBUS CAPITAL <span aria-hidden="true">/</span> Finanzas con perspectiva.</span><span>Entidad ficticia · Proyecto académico de Diego Ortega</span></footer>
+    </main>
 </body>
 </html>
