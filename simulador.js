@@ -1,5 +1,9 @@
 // Lee los datos del HTML y muestra los resultados.
 function calcular() {
+    if (!document.getElementById("formCredito").reportValidity()) {
+        return;
+    }
+
     let ingresos = parseFloat(document.getElementById("txtIngresos").value);
     let egresos = parseFloat(document.getElementById("txtEgresos").value);
     let disponible = calcularDisponible(ingresos, egresos);
@@ -29,4 +33,18 @@ function calcular() {
         estado.textContent = "CREDITO RECHAZADO";
         estado.className = "rechazado";
     }
+}
+
+// Limpia los campos y devuelve los resultados a su estado inicial.
+function reiniciar() {
+    document.getElementById("formCredito").reset();
+    document.getElementById("lblDisponibleValor").textContent = "USD 0.00";
+    document.getElementById("lblCapacidadValor").textContent = "USD 0.00";
+    document.getElementById("lblInteresValor").textContent = "USD 0.00";
+    document.getElementById("lblTotalValor").textContent = "USD 0.00";
+    document.getElementById("lblCuotaValor").textContent = "USD 0.00";
+    let estado = document.getElementById("spnEstadoCredito");
+    estado.textContent = "ANALIZANDO...";
+    estado.className = "pendiente";
+    document.getElementById("txtIngresos").focus();
 }
