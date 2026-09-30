@@ -57,3 +57,9 @@ Ese push sube todos los commits, conservando cada etapa. No uses `--force` si el
 ## Parte visual
 
 Logo SVG original, colores azul marino y verde petróleo, formulario adaptable a celular, tablet y PC. El prompt original y la especificación visual utilizada están en `prompts.txt`.
+
+## Verificación realizada
+
+Se ejecutaron pruebas con Node.js y un DOM simulado para los casos del PDF: disponible, capacidad, interés, total, cuota, mensajes de aprobación/rechazo, igualdad rechazada y reinicio. También se verificaron los IDs y las funciones de los commits intermedios. Las pruebas pasaron con la corrección de redondeo explicada arriba.
+
+La comprobación visual en navegador quedó pendiente: no había un navegador local instalado y falló su descarga. El CSS contiene adaptaciones a 850 px y 480 px; esto no sustituye una prueba visual en dispositivos.
