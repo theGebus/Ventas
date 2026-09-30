@@ -16,4 +16,7 @@ function calcular() {
 
     let total = calcularTotalPagar(monto, interes);
     document.getElementById("lblTotalValor").textContent = "USD " + total.toFixed(2);
+
+    let cuotaMensual = calcularCuotaMensual(total, plazoAnios);
+    document.getElementById("lblCuotaValor").textContent = "USD " + cuotaMensual.toFixed(2);
 }
