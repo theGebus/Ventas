@@ -1,54 +1,6 @@
-:root { color-scheme: light; --navy: #102d39; --green: #176b58; --muted: #60737a; --border: #dce4e3; }
-* { box-sizing: border-box; }
-body { margin: 0; background: #f3f6f4; color: var(--navy); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; }
-.cabecera { max-width: 1180px; margin: auto; padding: 25px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); gap: 20px; }
-.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); letter-spacing: 2px; font-size: 17px; }
-.marca strong { display: block; font-size: 11px; letter-spacing: 4px; }
-.etiqueta, .eyebrow { font-size: 11px; letter-spacing: 2px; font-weight: bold; }
-.etiqueta { color: var(--muted); }
-.container { max-width: 1180px; margin: auto; padding: 0 30px; }
-.intro { padding: 38px 0 28px; }
-.intro .eyebrow { color: var(--green); }
-h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.12; letter-spacing: -1.8px; margin: 14px 0; font-weight: 600; }
-.intro > p:last-child { color: var(--muted); max-width: 510px; margin-bottom: 0; }
-.simulador { display: grid; grid-template-columns: 1.3fr 1fr; background: white; border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: 0 12px 36px #102d3906; }
-form { padding: 30px 34px; min-width: 0; }
-h2 { font-size: 18px; line-height: 1.4; margin: 0 0 20px; }
-.seccion + .seccion { border-top: 1px solid var(--border); padding-top: 23px; margin-top: 25px; }
-.numero { font-size: 12px; padding: 6px 8px; background: #edf5f1; color: var(--green); border-radius: 6px; margin-right: 8px; }
-.campos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-label { display: block; font-size: 13px; font-weight: bold; margin: 12px 0 7px; }
-label small { color: var(--muted); font-size: 11px; font-weight: normal; margin-left: 5px; }
-input { width: 100%; min-width: 0; padding: 13px 14px; font: inherit; color: var(--navy); background: #fbfcfb; border: 1px solid #cbd6d3; border-radius: 7px; }
-input::placeholder { color: #7e8c90; }
-input:focus { outline: 2px solid var(--green); outline-offset: 2px; }
-.buttons { display: flex; gap: 12px; margin-top: 28px; }
-button { font: inherit; font-size: 14px; font-weight: bold; min-height: 48px; padding: 12px 20px; border-radius: 7px; cursor: pointer; border: 1px solid transparent; }
-#btnCalcularCredito { background: var(--green); color: white; flex: 1; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-#btnCalcularCredito:hover { background: #105441; }
-#btnReiniciar { background: white; color: var(--navy); border-color: var(--border); }
-#btnReiniciar:hover { background: #f3f6f4; }
-button:focus-visible, a:focus-visible { outline: 3px solid #40aa86; outline-offset: 3px; }
-.nota { font-size: 11px; color: var(--muted); margin: 14px 0 0; }
-.resultados { background: var(--navy); color: white; padding: 32px; min-width: 0; }
-.resultados .eyebrow { color: #9dcdbd; margin: 0 0 9px; }
-.resultados h2 { font-size: 26px; font-weight: normal; }
-.cuota { border-bottom: 1px solid #38535c; padding: 4px 0 22px; }
-.cuota p { font-size: 13px; color: #c2d1d5; margin: 0 0 4px; }
-#lblCuotaValor { font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; letter-spacing: -1px; overflow-wrap: anywhere; }
-dl { margin: 10px 0 24px; }
-dl > div { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 12px 0; font-size: 13px; }
-dt { color: #c2d1d5; }
-dt small { display: block; font-size: 11px; color: #9fb6bf; }
-dd { margin: 0; text-align: right; font-weight: bold; overflow-wrap: anywhere; min-width: 0; }
-.total { border-top: 1px solid #38535c; margin-top: 6px; }
-.total dt { color: white; }
-#spnEstadoCredito { padding: 11px 12px; text-align: center; border-radius: 7px; font-size: 12px; font-weight: bold; letter-spacing: 1px; }
-.pendiente { color: #d5e2e5; background: #244450; }
-.aprobado { color: #d3ffe7; background: #1d5547; }
-.rechazado { color: #ffe1db; background: #663c3c; }
-.ayuda { font-size: 11px; color: #b8ccd3; line-height: 1.7; }
-footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; color: var(--muted); font-size: 10px; }
-footer span span { margin: 0 8px; }
-@media (max-width: 850px) { .simulador { grid-template-columns: 1fr; } .resultados { padding: 30px 34px; } h1 br { display: none; } .intro { max-width: 620px; } }
-@media (max-width: 480px) { .cabecera { padding: 18px 20px; } .etiqueta { display: none; } .container { padding: 0 16px; } .intro { padding: 28px 4px 24px; } .intro > p:last-child { font-size: 14px; } form, .resultados { padding: 24px 20px; } .campos { grid-template-columns: 1fr; gap: 0; } h2 { font-size: 16px; } .buttons { flex-direction: column; } footer { flex-direction: column; gap: 5px; } }
+:root{color-scheme:dark;--fondo:#101112;--panel:#191b1d;--linea:#343638;--texto:#f3f0e9;--suave:#b7b8b6;--oro:#d4b780;--error:#ffa7a7}
+*{box-sizing:border-box}body{margin:0;background:var(--fondo);color:var(--texto);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:inherit}button,input{font:inherit}.cabecera{max-width:1200px;margin:auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--linea)}.marca{display:flex;align-items:center;gap:14px;text-decoration:none;font-size:24px;letter-spacing:-1px}.marca img{border-radius:12px;object-fit:contain}.etiqueta,.eyebrow,.intro-sello span{font-size:10px;letter-spacing:2.4px;font-weight:700}.etiqueta{color:var(--suave)}.container{max-width:1200px;margin:auto;padding:0 32px}.intro{position:relative;padding:44px 200px 36px 0}.eyebrow{color:var(--oro);margin:0 0 15px}h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,4.4vw,58px);font-weight:400;line-height:1.08;letter-spacing:-1.5px;margin:0 0 18px}h1 em{font-weight:400;color:var(--oro)}.intro>p:last-of-type{color:var(--suave);font-size:15px;max-width:480px;margin:0}.intro-sello{position:absolute;right:5px;top:35px;display:flex;flex-direction:column;align-items:center;gap:14px}.intro-sello img{border-radius:50%;border:5px solid #282723;box-shadow:0 0 0 1px #675a41;object-fit:contain}.intro-sello span{font-size:8px;color:var(--oro);letter-spacing:1.5px}.simulador{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);border:1px solid var(--linea);border-radius:20px;overflow:hidden;background:var(--panel);box-shadow:0 25px 70px #0003}form{padding:30px 34px}.seccion+.seccion{margin-top:25px}h2{font-size:17px;font-weight:500;margin:0 0 23px;letter-spacing:-.3px}.numero{font-size:11px;color:var(--oro);margin-right:10px;display:inline-grid;place-items:center;width:27px;height:27px;border:1px solid #61543d;border-radius:50%}.campos{display:grid;grid-template-columns:1fr 1fr;gap:19px}.campos>div{min-width:0}label{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:5px;font-size:13px;font-weight:600;margin-bottom:9px}label small{font-size:10px;color:var(--suave);font-weight:400}input{width:100%;min-width:0;padding:12px 13px;min-height:46px;border:1px solid #454749;border-radius:7px;background:#111315;color:var(--texto);outline:none}input::placeholder{color:#858985}input:focus{border-color:var(--oro);box-shadow:0 0 0 3px #d4b78024}input[aria-invalid=true]{border-color:var(--error)}.pista{display:block;font-size:10px;line-height:1.5;color:var(--suave);margin-top:6px}.error{margin:5px 0 0;color:var(--error);font-size:12px;line-height:1.45}.error:empty{display:none}.seccion>input~.campos{margin-top:18px}.buttons{display:flex;gap:12px;margin-top:23px}button{cursor:pointer;border:1px solid transparent;border-radius:7px;min-height:48px;padding:12px 18px;font-weight:600;font-size:13px}button:focus-visible,a:focus-visible{outline:3px solid var(--oro);outline-offset:4px}#btnCalcularCredito{background:var(--oro);color:#19160f;display:flex;justify-content:space-between;gap:20px;flex:1}#btnCalcularCredito:hover{background:#e4ca9b}#btnReiniciar{background:transparent;border-color:#515354;color:var(--texto)}#btnReiniciar:hover{background:#303234}.nota{font-size:10px;color:var(--suave);margin:13px 0 0;max-width:430px}.resultados{padding:33px 32px;background:linear-gradient(145deg,#282820,#1d211f);border-left:1px solid var(--linea)}.resultados h2{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin-bottom:28px}.cuota{padding:0 0 26px;border-bottom:1px solid #4b4b3f}.cuota p{font-size:12px;color:#c0c2b9;margin:0 0 6px}#lblCuotaValor{font-size:clamp(28px,3vw,42px);font-weight:400;letter-spacing:-1px;color:#e9d5ab;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}dl{margin:17px 0 25px}dl>div{display:flex;justify-content:space-between;gap:14px;padding:12px 0;font-size:12px}dt{color:#d1d2c9}dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}dt small{display:block;font-size:10px;color:#aaafa7;margin-top:3px}.total{border-top:1px solid #4b4b3f;margin-top:8px;padding-top:18px}.total dt,.total dd{color:var(--oro)}#spnEstadoCredito{padding:11px 13px;border:1px solid #646450;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;text-align:center;margin:0}.pendiente{color:#d4d2c1}.aprobado{color:#b6edc6;background:#163a28}.rechazado{color:#ffc0c0;background:#462727}.ayuda{font-size:11px;color:#b7bdb3;margin:15px 0 0;line-height:1.7}.resumen-error{color:var(--error);font-size:12px;margin:15px 0 0}.resumen-error:empty{display:none}footer{display:flex;justify-content:space-between;gap:20px;padding:24px 0 30px;font-size:10px;color:#a0a3a1}footer span span{padding:0 8px;color:var(--oro)}
+@media(min-width:1400px){.intro{padding-top:50px;padding-bottom:45px}}
+@media(max-width:850px){.cabecera{padding:18px 24px}.container{padding:0 24px}form,.resultados{padding:26px 23px}.simulador{grid-template-columns:1.2fr 1fr}.campos{grid-template-columns:1fr;gap:16px}.intro{padding-right:175px}.intro-sello img{width:115px;height:115px}.intro-sello span{display:none}}
+@media(max-width:620px){.cabecera{padding:15px 20px}.marca{font-size:22px}.marca img{width:45px;height:45px}.etiqueta{font-size:8px;letter-spacing:1px;max-width:110px;text-align:right}.container{padding:0 16px}.intro{padding:32px 0 27px}.intro>p:last-of-type{max-width:90%;font-size:14px}.intro-sello{display:none}.eyebrow{font-size:9px;letter-spacing:1.7px}h1{font-size:44px}.simulador{grid-template-columns:1fr;border-radius:14px}form,.resultados{padding:24px 20px}.resultados{border-left:0;border-top:1px solid var(--linea)}.campos{gap:18px}input{font-size:16px}.pista{font-size:11px}.nota{font-size:11px}.buttons{gap:8px}button{padding:12px;font-size:12px}#btnCalcularCredito{gap:8px}footer{flex-direction:column;gap:8px;padding:22px 4px;font-size:10px}#lblCuotaValor{font-size:39px}}
+@media(prefers-reduced-motion:no-preference){button,input{transition:background .18s,border-color .18s}}

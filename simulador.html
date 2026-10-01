@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#102d39">
-    <title>Simulador de crédito | Gebus Capital</title>
-    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#101112">
+    <title>Simulador de crédito | thGebus</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="simulador.css">
     <script src="funciones.js" defer></script>
+    <script src="validaciones.js" defer></script>
     <script src="simulador.js" defer></script>
 </head>
 <body>
     <header class="cabecera">
-        <a class="marca" href="simulador.html" aria-label="Gebus Capital, inicio"><img src="logo.svg" alt="" width="44" height="44"><span>GEBUS <strong>CAPITAL</strong></span></a>
+        <a class="marca" href="simulador.html" aria-label="thGebus, inicio"><img src="logo.png" alt="" width="58" height="58"><span><strong>thGebus</strong></span></a>
         <span class="etiqueta">SIMULADOR FINANCIERO</span>
     </header>
     <main class="container">
         <section class="intro">
             <p class="eyebrow">TU SIGUIENTE PASO, CON CLARIDAD</p>
-            <h1>Haz espacio para<br>tus próximos planes.</h1>
+            <h1>Tus planes.<br><em>Una visión clara.</em></h1>
             <p>Conoce tu capacidad de pago y calcula la cuota de tu crédito en un solo lugar.</p>
-        </section>
+        <div class="intro-sello"><img src="logo.png" alt="Logo oficial: conejo coronado theGebus" width="140" height="140"><span>DISEÑA TU SIGUIENTE PASO</span></div></section>
         <div class="simulador">
-            <form id="formCredito" onsubmit="calcular(); return false;">
+            <form novalidate id="formCredito" onsubmit="calcular(); return false;">
                 <section class="seccion">
                     <h2><span class="numero">01</span> Tus finanzas mensuales</h2>
                     <div class="campos">
-                        <div><label for="txtIngresos">Ingresos mensuales <small>USD</small></label><input type="number" id="txtIngresos" min="0" step="0.01" inputmode="decimal" placeholder="Ej. 1000.40" required></div>
-                        <div><label for="txtEgresos">Egresos mensuales <small>USD</small></label><input type="number" id="txtEgresos" min="0" step="0.01" inputmode="decimal" placeholder="Ej. 600" required></div>
+                        <div><label for="txtIngresos">Ingresos mensuales <small>USD</small></label><input type="text" id="txtIngresos" inputmode="decimal" placeholder="Ej. 1000.40" maxlength="24" aria-describedby="ayuda-txtIngresos error-txtIngresos" required><small class="pista" id="ayuda-txtIngresos">De USD 0,01 a 1.000.000 · hasta 2 decimales</small><p class="error" id="error-txtIngresos" aria-live="polite"></p></div>
+                        <div><label for="txtEgresos">Egresos mensuales <small>USD</small></label><input type="text" id="txtEgresos" inputmode="decimal" placeholder="Ej. 600" maxlength="24" aria-describedby="ayuda-txtEgresos error-txtEgresos" required><small class="pista" id="ayuda-txtEgresos">De USD 0 a 1.000.000 · hasta 2 decimales</small><p class="error" id="error-txtEgresos" aria-live="polite"></p></div>
                     </div>
                 </section>
                 <section class="seccion">
                     <h2><span class="numero">02</span> El crédito que tienes en mente</h2>
-                    <label for="txtMonto">Monto solicitado <small>USD · entero</small></label><input type="number" id="txtMonto" min="1" step="1" inputmode="numeric" placeholder="Ej. 2000" required>
+                    <label for="txtMonto">Monto solicitado <small>USD · entero</small></label><input type="text" id="txtMonto" inputmode="numeric" placeholder="Ej. 2000" maxlength="24" aria-describedby="ayuda-txtMonto error-txtMonto" required><small class="pista" id="ayuda-txtMonto">De USD 100 a 500.000 · sin decimales</small><p class="error" id="error-txtMonto" aria-live="polite"></p>
                     <div class="campos">
-                        <div><label for="txtPlazo">Plazo <small>años enteros</small></label><input type="number" id="txtPlazo" min="1" step="1" inputmode="numeric" placeholder="Ej. 1" required></div>
-                        <div><label for="txtTasaInteres">Tasa anual simple <small>% entero</small></label><input type="number" id="txtTasaInteres" min="0" step="1" inputmode="numeric" placeholder="Ej. 10" required></div>
+                        <div><label for="txtPlazo">Plazo <small>años enteros</small></label><input type="text" id="txtPlazo" inputmode="numeric" placeholder="Ej. 1" maxlength="24" aria-describedby="ayuda-txtPlazo error-txtPlazo" required><small class="pista" id="ayuda-txtPlazo">De 1 a 30 años · sin decimales</small><p class="error" id="error-txtPlazo" aria-live="polite"></p></div>
+                        <div><label for="txtTasaInteres">Tasa anual simple <small>% entero</small></label><input type="text" id="txtTasaInteres" inputmode="numeric" placeholder="Ej. 10" maxlength="24" aria-describedby="ayuda-txtTasaInteres error-txtTasaInteres" required><small class="pista" id="ayuda-txtTasaInteres">De 0 a 50 % · sin decimales</small><p class="error" id="error-txtTasaInteres" aria-live="polite"></p></div>
                     </div>
                 </section>
-                <div class="buttons"><button id="btnCalcularCredito" type="submit">Calcular Crédito <span aria-hidden="true">↗</span></button><button id="btnReiniciar" type="button" onclick="reiniciar()">Reiniciar</button></div>
+                <p id="resumenErrores" class="resumen-error" role="alert"></p><div class="buttons"><button id="btnCalcularCredito" type="submit">Calcular Simulador <span aria-hidden="true">↗</span></button><button id="btnReiniciar" type="button" onclick="reiniciar()">Reiniciar</button></div>
                 <p class="nota">El total incluye USD 100 por impuestos y contribución a SOLCA, según el taller.</p>
             </form>
             <aside class="resultados" aria-live="polite" aria-atomic="true">
@@ -51,11 +52,11 @@
                     <div><dt>Interés generado</dt><dd id="spnInteresPagar"><span id="lblInteresValor">USD 0.00</span></dd></div>
                     <div class="total"><dt>Total a pagar</dt><dd id="spnTotalPrestamo"><span id="lblTotalValor">USD 0.00</span></dd></div>
                 </dl>
-                <p id="spnEstadoCredito" class="pendiente">ANALIZANDO...</p>
-                <p class="ayuda">Completa tus datos y presiona Calcular Crédito. La capacidad de pago debe superar la cuota mensual.</p>
+                <p id="spnEstadoCredito" class="pendiente">LISTO PARA SIMULAR</p>
+                <p class="ayuda">Completa tus datos y presiona Calcular Simulador. La capacidad de pago debe superar la cuota mensual. Resultado orientativo para este ejercicio académico.</p>
             </aside>
         </div>
-        <footer><span>GEBUS CAPITAL <span aria-hidden="true">/</span> Finanzas con perspectiva.</span><span>Entidad ficticia · Proyecto académico de Diego Ortega</span></footer>
+        <footer><span>thGebus <span aria-hidden="true">/</span> Finanzas con perspectiva.</span><span>Entidad ficticia · Proyecto académico de Diego Ortega</span></footer>
     </main>
 </body>
 </html>
