@@ -1,5 +1,2 @@
-PROMPT DEL USUARIO
-ayudame hacer este deber con los push comit etc en git por que tu tienes acceso al git mio has eso y has los ejercicios al pies de la letra como esta el pdf taller 2 simuladorcredito con push y commit cuando te piden
-
 ESPECIFICACION DE DISENO UTILIZADA POR LA IA
 Mejorar el simulador con un aspecto empresarial y responsive para la entidad ficticia Gebus Capital. Crear un logo SVG original y usar azul marino, verde petroleo y blanco. Mantener los IDs originales y agregar los IDs del PDF dentro de sus componentes. Separar HTML, CSS y JavaScript. No usar librerias externas. Incluir campos claros, resultados legibles, estados de aprobacion y boton Reiniciar. Adaptar el formulario a celular, tablet y PC.
